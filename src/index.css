@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --color-ink-950: #060b16;
+  --color-ink-900: #0a1120;
+  --color-ink-850: #0d1628;
+  --color-ink-800: #111c32;
+  --color-ink-700: #18253f;
+  --color-ink-600: #22324f;
+  --color-ink-500: #33476b;
+  --color-ink-400: #5c7096;
+  --color-ink-300: #8a9bbb;
+  --color-ink-200: #b9c5db;
+  --color-ink-100: #e2e8f3;
+
+  --color-accent: #22d3ee;
+  --color-accent-dim: #0e7490;
+  --color-blue: #3b82f6;
+
+  --color-src-sensor: #22c55e;
+  --color-src-api: #38bdf8;
+  --color-src-sim: #f59e0b;
+  --color-src-est: #a78bfa;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-600) transparent;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* MapLibre overrides for the dark theme */
+.maplibregl-ctrl-group {
+  background: var(--color-ink-800) !important;
+  border: 1px solid var(--color-ink-600);
+}
+.maplibregl-ctrl-group button + button {
+  border-top-color: var(--color-ink-600) !important;
+}
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+  filter: invert(0.85);
+}
+.maplibregl-ctrl-attrib {
+  background: rgba(10, 17, 32, 0.75) !important;
+  color: var(--color-ink-300);
+  font-size: 10px;
+}
+.maplibregl-ctrl-attrib a {
+  color: var(--color-ink-200) !important;
+}
+.maplibregl-ctrl-attrib-button {
+  filter: invert(0.8);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-in {
+  animation: fade-in 0.25s ease-out;
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; }
+}
