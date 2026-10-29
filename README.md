@@ -4,6 +4,14 @@ CityTwin is an urban intelligence platform. It combines geospatial data, environ
 
 **Status: Phase 5.** It contains the frontend, the 2D/3D map, the OSM pipeline and Three.js detail layers, live traffic and ground-station air data where public feeds exist, and an optional FastAPI + PostGIS backend that serves districts, caches upstream feeds and pushes sensor updates over WebSocket. The backend also runs ML anomaly detection on the measured readings and hosts CityTwin AI, a Claude agent that answers questions with tools over that data.
 
+## Screenshots
+
+![City overview dashboard](docs/screenshots/overview.png)
+
+| 3D city model | Traffic analysis |
+|---|---|
+| ![3D city](docs/screenshots/3d-city.png) | ![Traffic analysis](docs/screenshots/traffic.png) |
+
 ## Quick start
 
 ```bash
