@@ -110,3 +110,7 @@ Hover any badge to see the provider and method. **Settings → Show simulated da
 - **Languages**: the UI defaults to Turkish. `src/i18n/` keys the dictionary by the English text (`t('Air quality')`) and falls back to English for anything untranslated; `TR_PATTERNS` covers strings with numbers in them, such as backend anomaly explanations. In `npm run dev`, `window.__i18nMissing` lists strings that went through `t()` without a translation.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the design and the roadmap for Phases 2–7.
+
+## License
+
+[MIT](LICENSE) © 2026 Eren Tyto
